@@ -100,6 +100,7 @@ const Whitelist = () => {
     const multipliedValue:any = parsedValue * 1000000;
     setAmount(multipliedValue)
   }
+  
   return (
     <>
       <Input onChange={amountChangeHandle} type="number" max={5000} min={1}></Input>
