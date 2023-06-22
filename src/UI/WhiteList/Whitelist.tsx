@@ -18,7 +18,7 @@ const Whitelist = () => {
         address: '0xE4fAD2C3AD810aDfc47B6A69F329e0c8F61fcFA9',
         abi: tUsdcABI,
         functionName: 'allowance',
-        args: [address, address]
+        args: [address, "0x2E02082f6bE47912161d78ED1a47aAEd392E923c"]
       })
       let val = Number(data)
       if (typeof val === "number" && val > 0) {
