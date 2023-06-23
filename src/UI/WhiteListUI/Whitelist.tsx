@@ -11,7 +11,6 @@ import { CONTRACT_ADDRESS } from "../../contracts/contractAddress/ContractAddres
 
 const Whitelist = () => {
   const { address, isConnected } = useAccount()
-  const [allowance, setAllowance] = useState(true)
   const[amount,setAmount] = useState()
   const [isWhitelistedaddress,setIsWhitelistedaddress] = useState(false)
   useEffect(() => {
@@ -38,24 +37,6 @@ const Whitelist = () => {
       
     }
     checkWhiteList()
-    
-    const checkAllowance = async () => {
-      const data = await readContract({
-        address: `0x${CONTRACT_ADDRESS.BRIDGED_USDC}`,
-        abi: tUsdcABI,
-        functionName: 'allowance',
-        args: [address, CONTRACT_ADDRESS.OX_PRESALE_CONTRACT]
-      })
-      let val = Number(data)
-      if (typeof val === "number" && val > 0) {
-        setAllowance(false)
-      }
-      else if (typeof val === "number" && val == 0) {
-        setAllowance(true)
-      }
-
-    }
-    checkAllowance()
   }, [isConnected])
   const onApproveHandle = async() => {
     try {
@@ -73,7 +54,6 @@ const Whitelist = () => {
         const transaction = await fetchTransaction({ hash: transactionHash });
         if (transaction.blockNumber) {
           console.log("transaction successfull")
-          setAllowance(false)
         }
         else {
           console.log("transaction unsucessfull")
@@ -106,7 +86,6 @@ const Whitelist = () => {
         const transaction = await fetchTransaction({ hash: transactionHash });
         if (transaction.blockNumber) {
           console.log("transaction successfull")
-          setAllowance(false)
         }
         else {
           console.log("transaction unsucessfull")
@@ -130,7 +109,7 @@ const Whitelist = () => {
   return (
     <>
       <Input onChange={amountChangeHandle} disabled={isWhitelistedaddress} type="number" max={5000} min={1}></Input>
-      {allowance && <Button  disabled={isWhitelistedaddress} onClick={onApproveHandle}>Approve</Button>}
+      <Button  disabled={isWhitelistedaddress} onClick={onApproveHandle}>Approve</Button>
       <Button disabled={isWhitelistedaddress} onClick={onContributeHandle}>Contribute</Button>
       <WalletConnect></WalletConnect>
     </>
