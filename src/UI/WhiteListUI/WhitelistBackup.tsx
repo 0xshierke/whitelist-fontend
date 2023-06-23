@@ -2,12 +2,12 @@
 import { useAccount } from "wagmi"
 import { Button } from "../../components/Button"
 import { Input } from "../../components/Input"
-import WalletConnect from "../WalletConnect/ConnectWallet"
 import tUsdcABI from "../../contracts/abi/tusdcABI"
 import { fetchTransaction, readContract, writeContract } from '@wagmi/core';
 import { useEffect, useState } from "react"
 import presaleABI from "../../contracts/abi/presaleABI"
 import { CONTRACT_ADDRESS } from "../../contracts/contractAddress/ContractAddress"
+import "./whitelist.css"
 
 const Whitelist = () => {
   const { address, isConnected } = useAccount()
@@ -110,8 +110,7 @@ const Whitelist = () => {
     <>
       <Input onChange={amountChangeHandle} disabled={isWhitelistedaddress} type="number" max={5000} min={1}></Input>
       <Button  disabled={isWhitelistedaddress} onClick={onApproveHandle}>Approve</Button>
-      <Button disabled={isWhitelistedaddress} onClick={onContributeHandle}>Contribute</Button>
-      <WalletConnect></WalletConnect>
+      <Button disabled={isWhitelistedaddress} onClick={onContributeHandle}>Contribute</Button> 
     </>
   )
 }

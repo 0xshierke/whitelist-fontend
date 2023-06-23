@@ -1,0 +1,19 @@
+.container{
+    display: flex;
+    margin: auto;
+    justify-content: center;
+    margin-top: 20px;
+}
+.navbar{
+    position: relative; 
+    left:110px
+}
+.wallet{
+    position: relative;
+    left:125px
+}
+.switch{
+    position: relative;
+    top:8px;
+    left:150px
+}

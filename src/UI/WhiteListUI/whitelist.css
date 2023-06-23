@@ -1,0 +1,11 @@
+.card-position{
+    display: flex;
+    justify-content: "center";
+    position: relative;
+    left: "100px";
+}
+@media (max-width: 480px) {
+    .card-position {
+      left: 70px; /* Adjust the left value for even smaller screens */
+    }
+  }
