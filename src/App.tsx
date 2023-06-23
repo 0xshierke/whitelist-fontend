@@ -1,4 +1,4 @@
-import Whitelist from "./UI/WhiteList/Whitelist.tsx";
+import Whitelist from "./UI/WhiteListUI/Whitelist";
 import { Switch } from "./components/Switch";
 
 function App() {
