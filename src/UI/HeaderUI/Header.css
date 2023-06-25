@@ -6,14 +6,14 @@
 }
 .navbar{
     position: relative; 
-    left:110px
+    left:80px
 }
 .wallet{
     position: relative;
-    left:125px
+    left:90px
 }
-.switch{
+/* .switch{
     position: relative;
     top:8px;
     left:150px
-}
+} */

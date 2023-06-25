@@ -50,7 +50,7 @@ const TabsContent = React.forwardRef<
       className
     )}
     {...props}
-    style={{fontFamily:"sans-serif",fontWeight:"bold" , marginTop:"40px"}}
+    style={{fontFamily:"sans-serif",fontWeight:"bold" , marginTop:"40px", width:"500px"}}
   />
 ))
 TabsContent.displayName = TabsPrimitive.Content.displayName
